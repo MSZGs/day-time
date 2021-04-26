@@ -1,6 +1,6 @@
 {
   "name": "@mszgs/day-time",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight library for operations with time in a day",
   "keywords": [
     "time",
@@ -9,7 +9,7 @@
   ],
   "author": "MSZGs",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
