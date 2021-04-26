@@ -4,6 +4,7 @@ export type Minute = `0${Digit}` | `1${Digit}` | `2${Digit}` | `3${Digit}` | `4$
 export type TimeString = `${Hour}:${Minute}` | "24:00";
 
 export const TimeStringValidator = /^((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00)$/;
+export const LenientTimeStringValidator = /^((0?[0-9]|1[0-9]|2[0-3]):(0?[0-9]|[1-5][0-9]))|(24:00)$/;
 
 export class Time {
   public static readonly MIN = new Time(0, 0);
@@ -95,11 +96,13 @@ export class Time {
     return new Time(0, value);
   }
 
-  public static parse(timeString: TimeString): Time {
+  public static parse(timeString: TimeString, strict = true): Time {
     if (!timeString) {
       return Time.MIN;
     }
-    if (!TimeStringValidator.test(timeString)) {
+
+    const validator = strict ? TimeStringValidator : LenientTimeStringValidator;
+    if (!validator.test(timeString)) {
       throw new Error("Parse failed, invalid time format!");
     }
 

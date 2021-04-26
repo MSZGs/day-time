@@ -1,6 +1,7 @@
 import { Time, TimeString } from "./time.js";
 
 export const TimeSpanStringValidator = /^(((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00))-(((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00))$/;
+export const LenientTimeSpanStringValidator = /^(((0?[0-9]|1[0-9]|2[0-3]):(0?[0-9]|[1-5][0-9]))|(24:00))-(((0?[0-9]|1[0-9]|2[0-3]):(0?[0-9]|[1-5][0-9]))|(24:00))$/;
 
 export class TimeSpan {
   readonly start: Time;
@@ -45,8 +46,9 @@ export class TimeSpan {
     return `${this.start.toString()}-${this.end.toString()}`;
   }
 
-  public static parse(text: string): TimeSpan {
-    if (!TimeSpanStringValidator.test(text)) {
+  public static parse(text: string, strict = true): TimeSpan {
+    const validator = strict ? TimeSpanStringValidator : LenientTimeSpanStringValidator;
+    if (!validator.test(text)) {
       throw new Error("Parse failed, invalid timeSpan format!");
     }
 
