@@ -1,5 +1,5 @@
-import { Time, TimeString } from "./time";
-import { TimeSpan } from "./time-span";
+import { Time, TimeString } from "./time.js";
+import { TimeSpan } from "./time-span.js";
 
 export const TimeAttributeConverter = {
   fromAttribute: (value: TimeString): Time => Time.parse(value),

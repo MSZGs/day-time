@@ -1,4 +1,4 @@
-import { Time, TimeString } from "./time";
+import { Time, TimeString } from "./time.js";
 
 export const TimeSpanStringValidator = /^(((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00))-(((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00))$/;
 
