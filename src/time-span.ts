@@ -53,6 +53,6 @@ export class TimeSpan {
     }
 
     const [start, end] = <[TimeString, TimeString]>text.split("-");
-    return new TimeSpan(Time.parse(start), Time.parse(end));
+    return new TimeSpan(Time.parse(start, strict), Time.parse(end, strict));
   }
 }
