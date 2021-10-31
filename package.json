@@ -1,6 +1,6 @@
 {
   "name": "@mszgs/day-time",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Lightweight library for operations with time in a day",
   "keywords": [
     "time",
