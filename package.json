@@ -15,11 +15,12 @@
     "build": "tsc",
     "test": "jest",
     "lint": "eslint  ./src/",
-    "lint:toJson": "eslint --output-file eslint_report.json --format json ./src/"
+    "lint:toJson": "eslint --output-file eslint_report.json --format json ./src/",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MSZGs/day-time.git"
+    "url": "https://github.com/MSZGs/day-time.git"
   },
   "bugs": {
     "url": "https://github.com/MSZGs/day-time/issues"
@@ -38,7 +39,10 @@
     "./utils.js": "./lib/utils.js"
   },
   "devDependencies": {
+    "@amanda-mitchell/semantic-release-npm-multiple": "^3.5.0",
     "@jest/globals": "^29.3.1",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/git": "^10.0.1",
     "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
@@ -49,6 +53,7 @@
     "jest-resolve": "^29.3.1",
     "jest-ts-webcompat-resolver": "^1.0.0",
     "prettier": "^2.4.1",
+    "semantic-release": "^19.0.5",
     "ts-jest": "^27.0.7",
     "tslib": "^2.3.1",
     "typescript": "^4.4.4"

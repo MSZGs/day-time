@@ -18,6 +18,13 @@ jobs:
         run: pnpm run lint
       - name: Run tests
         run: pnpm test
+      - name: Release
+        run: pnpm run release
+        env:
+          GITHUB_NPM_CONFIG_REGISTRY: https://npm.pkg.github.com/
+          NPM_NPM_CONFIG_REGISTRY: https://registry.npmjs.org
+          GITHUB_NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Upload Test coverage report
         uses: actions/upload-artifact@v1
         with:
