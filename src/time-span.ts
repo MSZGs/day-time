@@ -1,7 +1,9 @@
 import { Time, TimeString } from "./time.js";
 
-export const TimeSpanStringValidator = /^(((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00))-(((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00))$/;
-export const LenientTimeSpanStringValidator = /^(((0?[0-9]|1[0-9]|2[0-3]):(0?[0-9]|[1-5][0-9]))|(24:00))-(((0?[0-9]|1[0-9]|2[0-3]):(0?[0-9]|[1-5][0-9]))|(24:00))$/;
+export const TimeSpanStringValidator =
+  /^(((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00))-(((0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]))|(24:00))$/;
+export const LenientTimeSpanStringValidator =
+  /^(((0?[0-9]|1[0-9]|2[0-3]):(0?[0-9]|[1-5][0-9]))|(24:00))-(((0?[0-9]|1[0-9]|2[0-3]):(0?[0-9]|[1-5][0-9]))|(24:00))$/;
 
 export class TimeSpan {
   readonly start: Time;
